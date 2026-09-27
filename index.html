@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <header class="header">
+        <p class="subtitle">STUDENT MANAGEMENT SYSTEM</p>
+
+        <h1>Student Manager</h1>
+
+        <p class="description">
+            Add, search and manage student information
+        </p>
+    </header>
+
+
+    <!-- Add Student -->
+    <section class="card">
+
+        <div class="section-title">
+            <div class="icon">+</div>
+
+            <div>
+                <h2>Add Student</h2>
+                <p>Enter information about a new student</p>
+            </div>
+        </div>
+
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label for="studentName">Student Name</label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="e.g. John Smith"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="studentGroup">Group</label>
+
+                <input
+                    type="text"
+                    id="studentGroup"
+                    placeholder="e.g. SE-231"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="studentGrade">Grade</label>
+
+                <input
+                    type="number"
+                    id="studentGrade"
+                    min="0"
+                    max="100"
+                    placeholder="0 - 100"
+                >
+            </div>
+
+        </div>
+
+
+        <button
+            class="primary-button"
+            onclick="addStudent()">
+            Add Student
+        </button>
+
+
+        <p id="addStatus"></p>
+
+    </section>
+
+
+    <!-- Student List -->
+    <section class="card">
+
+        <div class="section-title">
+            <div class="icon">☷</div>
+
+            <div>
+                <h2>Student List</h2>
+                <p>All students in the system</p>
+            </div>
+        </div>
+
+
+        <div id="studentList"></div>
+
+    </section>
+
+
+    <!-- Search -->
+    <section class="card">
+
+        <div class="section-title">
+            <div class="icon">⌕</div>
+
+            <div>
+                <h2>Search Student</h2>
+                <p>Find a student by name</p>
+            </div>
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchName"
+                placeholder="Enter student name"
+            >
+
+            <button
+                class="primary-button"
+                onclick="searchStudent()">
+                Search
+            </button>
+
+        </div>
+
+
+        <div id="searchResult"></div>
+
+    </section>
+
+
+    <!-- HTTP Methods -->
+    <section class="card">
+
+        <div class="section-title">
+
+            <div>
+                <h2>HTTP Methods</h2>
+
+                <p>
+                    Methods used in the Student Management System
+                </p>
+            </div>
+
+        </div>
+
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>HTTP Method</th>
+                </tr>
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+                    <td>Get students</td>
+                    <td>
+                        <span class="method get">GET</span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Get one student</td>
+                    <td>
+                        <span class="method get">GET</span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Add student</td>
+                    <td>
+                        <span class="method post">POST</span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Update student</td>
+                    <td>
+                        <span class="method put">PUT / PATCH</span>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>Delete student</td>
+                    <td>
+                        <span class="method delete">DELETE</span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
